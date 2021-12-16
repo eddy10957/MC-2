@@ -8,7 +8,7 @@
 
 
 import SwiftUI
-import SpriteKit
+import Neumorphic
 
 
 
@@ -31,6 +31,7 @@ struct ContentView: View {
         
         ZStack{
             VStack{
+                
                 Spacer()
                 
                 ZStack{
@@ -43,11 +44,10 @@ struct ContentView: View {
                     }
                     
                 }
-//                .shadow(color: .black, radius: 10, x: 0, y: 20)
                 .onLongPressGesture(minimumDuration: 1, pressing: { _ in
                     showParticles.toggle()
                     }) {
-                        showParticles.toggle()
+                        showParticles=false
                         cigsCount += 1
                     }
                 .ignoresSafeArea()
@@ -69,7 +69,8 @@ struct ContentView: View {
                 .font(.system(size: 70, weight: .semibold))
                 .padding(.top, 35.0)
                 .frame(maxHeight: .infinity, alignment: .top)
-                .shadow(color: .black, radius: 10, x: 0, y: 20)
+                .shadow(color: .black, radius: 15, x: 0, y: 10)
+//                .shadow(color: .white, radius: 15, x: 0, y: -10)
 
             
         }
@@ -112,7 +113,7 @@ struct ContentView: View {
         
         func body(content: Content) -> some View {
             let animation = Animation.linear(duration: duration)
-//                .repeatForever(autoreverses: false)
+
             
             return ZStack {
                 ForEach (0..<count)  { index in
@@ -125,7 +126,7 @@ struct ContentView: View {
                         .opacity((duration-self.time)/duration)
                         .animation(animation.delay(Double.random(in: 0..<self.duration)))
                         .blendMode(.color)
-                        .frame(width: 20, height: 20)
+                        .frame(width: 30, height: 30)
                 }
                 
             }.onAppear(){

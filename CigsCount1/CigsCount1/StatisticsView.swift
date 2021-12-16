@@ -33,7 +33,8 @@ struct StatisticsView: View {
                 
                 Image(systemName: "chevron.down")
                     .font(.system(size: 70, weight: .semibold))
-                    .shadow(color: .black, radius: 10, x: 0, y: -20)
+                    .shadow(color: .black, radius: 15, x: 0, y: -10)
+//                    .shadow(color: .white, radius: 15, x: 0, y: 10)
                     .padding()
                     
             }

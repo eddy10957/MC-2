@@ -19,17 +19,17 @@ struct CircularProgressBar: View {
             
             
             Circle().fill(Color( red: 212/255, green: 126/255, blue: 25/255, opacity: 1))
-                .softInnerShadow(Circle(), spread: 0.1)
+                .softInnerShadow(Circle(), darkShadow: .white ,lightShadow: .black, spread: 0.05 )
             Circle()
                 .trim(from: 0.0, to: CGFloat(min((Double(cigsCount) / 7), 1.0)))
                 .stroke(style: StrokeStyle(lineWidth: 40.0, lineCap: .round, lineJoin: .round))
                 .foregroundColor(.white)
                 .rotationEffect(Angle(degrees: 270.0))
                 .frame(width: 160, height: 160)
-//                .softInnerShadow(Circle(), spread: 0.001)
+//                .softInnerShadow(Circle(), darkShadow: .gray, lightShadow: .white, spread: 0.01, radius: 10)
             
             Circle().fill(.orange).frame(width: 120, height:120)
-                .softOuterShadow(offset: 6, radius: 6)
+                .softOuterShadow(offset: 4, radius: 6)
             
 //            Circle()
 //                .stroke(lineWidth: 15.0)
@@ -45,6 +45,7 @@ struct CircularProgressBar: View {
 //                .bold()
             Text("\(cigsCount)")
                 .font(.system(size: 48))
+                .foregroundColor(.black)
                 .bold()
         }
         .frame(width: 200, height: 200, alignment: .center)

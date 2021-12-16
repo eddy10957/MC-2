@@ -53,7 +53,7 @@ struct VerticalChart: View {
             
             ZStack(alignment: .bottom){
                 RoundedRectangle(cornerRadius: 20).fill(Color( red: 212/255, green: 126/255, blue: 25/255, opacity: 1))
-                    .softInnerShadow(RoundedRectangle(cornerRadius: 20), darkShadow: .black, lightShadow: .orange, spread: 0.3, radius: 2)
+                    .softInnerShadow(RoundedRectangle(cornerRadius: 20), darkShadow: .black, lightShadow: .orange, spread: 0.2, radius: 2)
                             .frame(width: 20, height:150)
                             
                 RoundedRectangle(cornerRadius: 20).fill(.black)
